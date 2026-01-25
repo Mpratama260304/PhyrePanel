@@ -108,7 +108,7 @@ class Utilities extends Page
                 ->modalHeading('Microweber Vendor Assets Symlink for All Installations')
                 ->modalDescription('This will run "microweber:vendor-assets-symlink" on all Microweber installations. This may take some time.')
                 ->action(function () {
-                    RunInstallationCommands::dispatchSync('microweber:vendor-assets-symlink');
+                    RunInstallationCommands::dispatch('microweber:vendor-assets-symlink');
 
                     Notification::make()
                         ->title('Microweber Vendor Assets Symlink Job Dispatched')
@@ -124,7 +124,7 @@ class Utilities extends Page
                 ->modalHeading('Microweber Reload Modules for All Installations')
                 ->modalDescription('This will run "microweber:reload-database" on all Microweber installations. This may take some time.')
                 ->action(function () {
-                    RunInstallationCommands::dispatchSync('microweber:reload-database');
+                    RunInstallationCommands::dispatch('microweber:reload-database');
 
                     Notification::make()
                         ->title('Microweber Reload Database Job Dispatched')
