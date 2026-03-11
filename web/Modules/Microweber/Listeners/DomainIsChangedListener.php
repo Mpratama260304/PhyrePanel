@@ -46,10 +46,10 @@ class DomainIsChangedListener
         shell_exec('php ' . $findMicroweberInstallation->installation_path . '/artisan cache:clear');
 
         //fix permissions
-        shell_exec('chown -R ' . $chown_user . ':' . $chown_user . ' ' . $chown_path);
+       // shell_exec('chown -R ' . $chown_user . ':' . $chown_user . ' ' . $chown_path);
 
         // chmod
-        shell_exec('chmod -R 755 ' . $chown_path);
+       // shell_exec('chmod -R 755 ' . $chown_path);
 
 
 

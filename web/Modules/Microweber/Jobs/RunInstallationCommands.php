@@ -118,6 +118,27 @@ class RunInstallationCommands implements ShouldQueue
 
         $result = ShellApi::exec($fullCommand);
 
+        // chown to the user
+
+        $chownCommand = "chown -R {$username}:{$username} {$installationPath}";
+        \Log::info("Executing chown command: {$chownCommand}");
+        ShellApi::exec($chownCommand);
+
+
+        $storagePath = $installationPath . '/public/storage';
+        if (is_dir($storagePath)) {
+            $chmodCommand = "chmod -R 775 {$storagePath}";
+            \Log::info("Executing chmod command: {$chmodCommand}");
+            ShellApi::exec($chmodCommand);
+        }
+        $storagePath = $installationPath . '/storage';
+
+        if (is_dir($storagePath)) {
+            $chmodCommand = "chmod -R 775 {$storagePath}";
+            \Log::info("Executing chmod command: {$chmodCommand}");
+            ShellApi::exec($chmodCommand);
+        }
+
         if (is_array($result) and $result['exit_code'] !== 0) {
             throw new \Exception('Artisan command failed: ' . $result['output']);
         }

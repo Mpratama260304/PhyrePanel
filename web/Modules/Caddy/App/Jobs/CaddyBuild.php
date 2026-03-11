@@ -195,7 +195,7 @@ class CaddyBuild implements ShouldQueue
             $domainLog = '/var/log/caddy/' . $domain->domain . '.log';
             shell_exec("chown caddy:caddy '/var/log/caddy/");
             shell_exec("chmod -R 777 /var/log/caddy/");
-//
+
             shell_exec("sudo setfacl -R -m u:caddy:rx " . $domain->document_root);
             shell_exec("sudo setfacl -R -m u:caddy:rx " . $domain->domain_public);
             shell_exec("sudo setfacl -R -m u:caddy:rx " . $domain->home_root);

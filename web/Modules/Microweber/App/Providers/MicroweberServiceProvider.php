@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Modules\Microweber\App\Console\Commands\DownloadMicroweber;
 use Modules\Microweber\App\Console\Commands\ReinstallMicroweberInstallations;
+use Modules\Microweber\App\Console\Commands\RunInstallationCommand;
+use Modules\Microweber\App\Console\Commands\RunVendorAssetsSymlink;
 use Modules\Microweber\Listeners\DomainIsCreatedListener;
 use Modules\Microweber\MicroweberApacheVirtualHostConfig;
 use Modules\Microweber\MicroweberBackupConfig;
@@ -62,6 +64,8 @@ class MicroweberServiceProvider extends ServiceProvider
         $this->commands([
             ReinstallMicroweberInstallations::class,
             DownloadMicroweber::class,
+            RunVendorAssetsSymlink::class,
+            RunInstallationCommand::class,
         ]);
     }
 
