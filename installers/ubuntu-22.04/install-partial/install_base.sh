@@ -52,7 +52,7 @@ wget https://raw.githubusercontent.com/PhyreApps/PhyrePanel/refs/heads/main/web/
 sudo chmod 644 /usr/local/phyre/ssl/phyre.crt
 sudo chmod 600 /usr/local/phyre/ssl/phyre.key
 
-wget https://raw.githubusercontent.com/PhyreApps/PhyrePanel/main/installers/ubuntu-22.04/greeting.sh -O /etc/profile.d/phyre-greeting.sh
+wget https://raw.githubusercontent.com/Mpratama260304/PhyrePanel/main/installers/ubuntu-22.04/greeting.sh -O /etc/profile.d/phyre-greeting.sh
 
 # Install PHYRE PHP
 wget https://github.com/PhyreApps/PhyrePanelPHP/raw/main/compilators/debian/php/dist/phyre-php-8.2.0-ubuntu-22.04.deb

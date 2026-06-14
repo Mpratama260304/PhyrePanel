@@ -52,21 +52,21 @@ wget https://raw.githubusercontent.com/PhyreApps/PhyrePanel/refs/heads/main/web/
 sudo chmod 644 /usr/local/phyre/ssl/phyre.crt
 sudo chmod 600 /usr/local/phyre/ssl/phyre.key
 
-wget https://raw.githubusercontent.com/Mpratama260304/PhyrePanel/main/installers/ubuntu-24.04/greeting.sh -O /etc/profile.d/phyre-greeting.sh
+wget https://raw.githubusercontent.com/Mpratama260304/PhyrePanel/main/installers/ubuntu-22.04/greeting.sh -O /etc/profile.d/phyre-greeting.sh
 
 # Install PHYRE PHP
-wget https://github.com/PhyreApps/PhyrePanelPHP/raw/main/compilators/debian/php/dist/phyre-php-8.2.0-ubuntu-24.04.deb
-dpkg -i phyre-php-8.2.0-ubuntu-24.04.deb
+wget https://github.com/PhyreApps/PhyrePanelPHP/raw/main/compilators/debian/php/dist/phyre-php-8.2.0-ubuntu-22.04.deb
+dpkg -i phyre-php-8.2.0-ubuntu-22.04.deb
 
 # Install PHYRE NGINX
-wget https://github.com/PhyreApps/PhyrePanelNGINX/raw/main/compilators/debian/nginx/dist/phyre-nginx-1.24.0-ubuntu-24.04.deb
-dpkg -i phyre-nginx-1.24.0-ubuntu-24.04.deb
+wget https://github.com/PhyreApps/PhyrePanelNGINX/raw/main/compilators/debian/nginx/dist/phyre-nginx-1.24.0-ubuntu-22.04.deb
+dpkg -i phyre-nginx-1.24.0-ubuntu-22.04.deb
 
 PHYRE_PHP=/usr/local/phyre/php/bin/php
 
 ln -s $PHYRE_PHP /usr/bin/phyre-php
 
-curl -s https://phyrepanel.com/api/phyre-installation-log -X POST -H "Content-Type: application/json" -d '{"os": "ubuntu-24.04"}'
+curl -s https://phyrepanel.com/api/phyre-installation-log -X POST -H "Content-Type: application/json" -d '{"os": "ubuntu-22.04"}'
 #!/bin/bash
 
 HOSTNAME=$(hostname)

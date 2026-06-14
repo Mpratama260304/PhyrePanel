@@ -3,9 +3,8 @@
 </p>
 <p align="center">
   <a href="https://discord.gg/vsxBuMFK"><img src="https://img.shields.io/discord/1227542192189603872?logo=discord&label=discord"/></a>
-  <a href="https://github.com/PhyreApps/PhyrePanel"><img src="https://img.shields.io/github/stars/PhyreApps/PhyrePanel" /></a>
-  <a href="https://github.com/PhyreApps/PhyrePanel/blob/main/LICENSE"><img src="https://img.shields.io/github/license/PhyreApps/PhyrePanel"/></a>
-  <a href="https://codecov.io/gh/PhyreApps/PhyrePanel"><img src="https://codecov.io/gh/PhyreApps/PhyrePanel/graph/badge.svg?token=BO0RTPLS4W"/></a>
+  <a href="https://github.com/Mpratama260304/PhyrePanel"><img src="https://img.shields.io/github/stars/Mpratama260304/PhyrePanel" /></a>
+  <a href="https://github.com/Mpratama260304/PhyrePanel/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Mpratama260304/PhyrePanel"/></a>
 </p>
 
 <p align="center"> 
@@ -19,17 +18,30 @@
 
 PHYRE PANEL is a powerful Linux multi-platform hosting control panel designed to simplify the process of managing web hosting servers. Whether you're a seasoned sysadmin or just starting out, PHYRE PANEL provides an intuitive interface and robust features to streamline your hosting management tasks.
 
+## Supported Operating Systems
+
+PHYRE PANEL currently supports the following 64-bit (x86_64) Debian-based distributions:
+
+- **Ubuntu 20.04 LTS**
+- **Ubuntu 22.04 LTS**
+- **Ubuntu 24.04 LTS**
+
+The installer automatically detects your distribution and version and downloads the matching installer from `installers/ubuntu-<version>/install.sh`.
+
 ## Installation
-To install PhyrePanel, you need to run this commands:
+
+> **Requirements:** A clean server running one of the supported operating systems above, root access, and a 64-bit (x86_64) system using the Bash shell.
+
+To install PhyrePanel, run these commands as **root**:
 ```
-wget https://raw.githubusercontent.com/PhyreApps/PhyrePanel/main/installers/install.sh && chmod +x install.sh && ./install.sh
+wget https://raw.githubusercontent.com/Mpratama260304/PhyrePanel/main/installers/install.sh && chmod +x install.sh && ./install.sh
 ```
 The admin panel can be opened on port: yourserver.com:8443
 
 ## Updating
 To update PhyrePanel, you need to run this commands:
 ```
-rm -rf update.sh && wget https://raw.githubusercontent.com/PhyreApps/PhyrePanel/main/web/update.sh && chmod +x update.sh && ./update.sh
+rm -rf update.sh && wget https://raw.githubusercontent.com/Mpratama260304/PhyrePanel/main/web/update.sh && chmod +x update.sh && ./update.sh
 ```
 
 All development is done on the `dev` branch. The `master` branch is used for stable releases.
@@ -55,7 +67,7 @@ We hope you enjoy using PHYRE PANEL to simplify your hosting management tasks!
 
 ## Contributing
 
-We welcome contributions from the community to help improve PHYRE PANEL. If you have ideas for new features, bug fixes, or other enhancements, please feel free to [open an issue](https://github.com/PhyreApps/PhyrePanel/issues) or submit a pull request.
+We welcome contributions from the community to help improve PHYRE PANEL. If you have ideas for new features, bug fixes, or other enhancements, please feel free to [open an issue](https://github.com/Mpratama260304/PhyrePanel/issues) or submit a pull request.
 
 
 ## Integrations
