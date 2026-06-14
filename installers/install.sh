@@ -43,8 +43,9 @@ DISTRO_NAME=${DISTRO_NAME// /-}
 
 INSTALLER_URL="https://raw.githubusercontent.com/Mpratama260304/PhyrePanel/main/installers/${DISTRO_NAME}-${DISTRO_VERSION}/install.sh"
 
-INSTALLER_CONTENT=$(wget ${INSTALLER_URL} 2>&1)
-if [[ "$INSTALLER_CONTENT" =~ 404\ Not\ Found ]]; then
+# Check if the installer for this distro version exists (reliable HTTP status check)
+HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" -L "$INSTALLER_URL")
+if [[ "$HTTP_STATUS" != "200" ]]; then
     echo "PhyrePanel not supporting this version of distribution"
     echo "Distro: ${DISTRO_NAME} Version: ${DISTRO_VERSION}"
     echo "Exiting..."
@@ -57,6 +58,7 @@ if [ -d "/usr/local/phyre" ]; then
     exit 0
 fi
 
-wget $INSTALLER_URL -O ./phyre-installer.sh
+# Always overwrite any previous installer to avoid running a stale version
+wget "$INSTALLER_URL" -O ./phyre-installer.sh
 chmod +x ./phyre-installer.sh
 bash ./phyre-installer.sh
